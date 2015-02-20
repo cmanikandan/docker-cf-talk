@@ -8,6 +8,9 @@ Note:
 Welcome and Introduction
 
 ---
+![Containers and Clouds](./images/cloud_containers.jpg)
+
+---
 
 ## What is Cloud Foundry
 
@@ -57,11 +60,28 @@ Note:
 - Binding service to app means providing connection details through env variables
 - Service Brokers are easy to implement, five simple REST endpoints
 
+--
+
+## Self-hosted or public
+
+* Install it yourself with Bosh
+* Use a hosted solution:
+  * anynines.de
+  * IBM BlueMix
+  * Stackato
+  * run.pivotal.io
+
+Note:
+- One of the main selling points of CF is that you can install it yourself
+- Or you can just use any of these services
+
 ---
 
 ## What is Docker
 
 Let's take a look
+
+Or maybe not <!-- .element: class="fragment" data-fragment-index="1" -->
 
 Note:
 Who here knows Docker or has played around with it? Who is using it for production? I prepared
@@ -80,16 +100,6 @@ PaaS, dotCloud.
 
 ---
 
-## Why is Docker so popular
-
-* Easy-to-use container technology <!-- .element: class="fragment" data-fragment-index="1" -->
-  * CLI
-  * Dockerfiles
-  * Cross-plattform
-* Community <!-- .element: class="fragment" data-fragment-index="2" -->
-
----
-
 ## Docker and Cloud Foundry
 
 * Docker Buildpack
@@ -101,32 +111,6 @@ PaaS, dotCloud.
 Note:
 - These are five projects that bring CF and Docker together
 - Honorable mentions: Bosh Docker release, Decker
-
----
-
-## Docker Buildpack
-
-* Using all the benefits of the CF platform for Docker containers
-* Requires external docker host
-* https://github.com/duglin/cf-docker
-
-Note:
-- Created by Doug Davis from IBM
-- Pushing Docker containers through CF command line
-- Docker containers are running outside of Cloud Foundry
-
----
-
-## Docker Service
-
-* Service Provider to expose Docker containers as services
-* Requires external Docker host
-* https://github.com/cf-platform-eng/cf-containers-broker
-
-Note:
-- Created by Ferdi from Pivotal
-- Enables easy service binding for services running inside Docker containers
-- Broker and Services are running outside of Cloud Foundry on a Docker Host
 
 ---
 
@@ -164,6 +148,20 @@ Note:
 Note:
 - Very young project
 - Think of it as a Cloud Foundry lite
+
+---
+
+## Honorable Mentions
+
+* [Docker Buildpack](https://github.com/duglin/cf-docker)
+* [Docker Service](https://github.com/cf-platform-eng/cf-containers-broker)
+
+
+Note:
+
+- Created by Doug Davis from IBM, Pushing Docker containers through CF command line, Docker containers are running outside of Cloud Foundry
+
+- Created by Ferdi from Pivotal, Enables easy service binding for services running inside Docker containers, Broker and Services are running outside of Cloud Foundry on a Docker Host
 
 ---
 
