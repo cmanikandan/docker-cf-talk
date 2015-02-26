@@ -25,6 +25,15 @@ Show in a demo
 
 --
 
+## CF Architecture Overview
+
+![CF Architecture Overview](./images/cf_overview.png)
+
+Note:
+- VMWare, Azure, AWS, OpenStack, Google Compute Engine
+
+--
+
 ## Running apps in Cloud Foundry
 
 * App compiled to a Droplet <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -104,13 +113,50 @@ PaaS, dotCloud.
 
 * Docker Buildpack
 * Docker ServiceProvider
-* Diego
 * Cloud Rocker
+* Diego
 * Lattice
 
 Note:
 - These are five projects that bring CF and Docker together
-- Honorable mentions: Bosh Docker release, Decker
+
+---
+
+## Docker Buildpack
+
+* Using all the benefits of the CF platform for Docker containers
+* Requires external docker host
+* https://github.com/duglin/cf-docker
+
+Note:
+- Created by Doug Davis from IBM
+- Pushing Docker containers through CF command line
+- Docker containers are running outside of Cloud Foundry
+
+---
+
+## Docker Service
+
+* Service Provider to expose Docker containers as services
+* Requires external Docker host (can be installed through Bosh)
+* https://github.com/cf-platform-eng/cf-containers-broker
+
+Note:
+- Created by Ferdi from Pivotal
+- Enables easy service binding for services running inside Docker containers
+- Broker and Services are running outside of Cloud Foundry on a Docker Host
+
+---
+
+## Cloud Rocker
+
+* Build Docker images using CF buildpacks
+* Rapid turnaround for local development
+* https://github.com/CloudCredo/cloudrocker
+
+Note:
+- CloudCredo is doing cool stuff with Cloud Foundry, this is just one example
+- Also use this for buildpack development
 
 ---
 
@@ -127,18 +173,6 @@ Note:
 
 ---
 
-## Cloud Rocker
-
-* Build Docker images using CF buildpacks
-* Rapid turnaround for local development
-* https://github.com/CloudCredo/cloudrocker
-
-Note:
-- CloudCredo is doing cool stuff with Cloud Foundry, this is just one example
-- Also use this for buildpack development
-
----
-
 ## Lattice
 
 * Standalone scheduler extracted from Diego for Docker images
@@ -148,20 +182,6 @@ Note:
 Note:
 - Very young project
 - Think of it as a Cloud Foundry lite
-
----
-
-## Honorable Mentions
-
-* [Docker Buildpack](https://github.com/duglin/cf-docker)
-* [Docker Service](https://github.com/cf-platform-eng/cf-containers-broker)
-
-
-Note:
-
-- Created by Doug Davis from IBM, Pushing Docker containers through CF command line, Docker containers are running outside of Cloud Foundry
-
-- Created by Ferdi from Pivotal, Enables easy service binding for services running inside Docker containers, Broker and Services are running outside of Cloud Foundry on a Docker Host
 
 ---
 
